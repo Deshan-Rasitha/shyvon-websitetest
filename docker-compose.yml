@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: shyvon_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: shyvon_user
+      POSTGRES_PASSWORD: shyvon_secure_password_2026
+      POSTGRES_DB: shyvon_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - shyvon_pgdata:/var/lib/postgresql/data
+
+volumes:
+  shyvon_pgdata:
